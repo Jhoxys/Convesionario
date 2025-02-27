@@ -1,0 +1,269 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+ 
+}
+
+#marcas {
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+    background-image: url('../img/portada1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+    display: inline-block;
+}
+
+    #marcas ul {
+        width: 100%;
+        list-style: none;
+        display: -ms-grid;
+        display: grid;
+        gap: 1.5rem;
+        -ms-grid-columns: (minmax(85px, 1fr)) [auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    }
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+#marcas ul li {
+    text-align: center
+}
+
+    #marcas ul li a {
+        display: inline-block;
+        min-width: 101px;
+        padding: .5rem;
+        text-align: center
+    }
+
+        #marcas ul li a:hover {
+            background-color: rgba(0,0,0,.15);
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px
+        }
+
+    #marcas ul li img {
+        max-width: 85px;
+        min-width: 85px;
+        width: 85px
+    }
+
+@media only screen and (min-width: 1024px) {
+    #marcas ul {
+        gap: 1rem 4rem
+    }
+}
+
+#pie {
+    background-color: #232628;
+    padding: 3.5rem 0 1.5rem 0;
+    position: relative
+}
+
+
+
+    #pie .wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 1.5rem
+    }
+
+@media only screen and (min-width: 580px) {
+    #pie .wrapper {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+}
+
+#pie .dealer {
+    color: #fff;
+    font-family: Roboto,sans-serif;
+    min-width: 270px;
+    margin-bottom: 2rem
+}
+
+    #pie .dealer:nth-child(1) {
+        max-width: 280px
+    }
+
+    #pie .dealer:nth-child(2) {
+        display: none
+    }
+
+@media only screen and (min-width: 900px) {
+    #pie .dealer:nth-child(1), #pie .dealer:nth-child(3) {
+        max-width: 250px;
+        min-width: 250px
+    }
+
+    #pie .dealer:nth-child(2) {
+        display: block;
+        min-width: calc(100% - 600px)
+    }
+}
+
+#pie .dealer .titulo {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    border-left: solid 4px #c83939;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+#pie .dealer .donde {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: .7rem;
+    padding-left: 1.2rem;
+    gap: .5rem;
+    font-size: .95rem
+}
+
+    #pie .dealer .donde i {
+        display: inline-block;
+        width: 20px;
+        min-width: 20px;
+        max-width: 20px;
+        font-size: 1.15rem;
+        height: 20px;
+        margin-top: 5px
+    }
+
+#pie .dealer ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(120px,1fr)) [auto-fit];
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    gap: .5rem;
+    list-style: square;
+    padding-left: 2rem
+}
+
+#pie .dealer ul li a {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 0.95rem
+    }
+#pie .dealer ul li a:hover {
+            color: #c83939;
+            cursor:pointer;
+        }
+
+
+
+
+
+#pie .dealer .redes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: .5rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem
+}
+
+    #pie .dealer .redes .icono {
+        width: 45px;
+        height: 45px;
+        background-color: rgba(0,0,0,.15);
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+        #pie .dealer .redes .icono i {
+            height: 24px;
+            color: #fff;
+            font-size: 1.5rem
+        }
+
+        #pie .dealer .redes .icono:hover {
+            background-color: #c83939
+        }
+
+#pie .dealer .horarios {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: .5rem;
+    padding-left: 1.5rem;
+    font-size: .95rem
+}
+
+    #pie .dealer .horarios strong {
+        width: 100px;
+        display: inline-block
+    }
+
+
+
+

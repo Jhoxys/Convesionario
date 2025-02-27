@@ -1,0 +1,211 @@
+﻿@using CapaPrincipal.Models
+
+@model List<Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["HomePage"] = true;
+}
+
+<div style="background-image: url('img/portada1.jpg');  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;   height:auto">
+
+
+    <div class="container text-white py-5">
+        <div class="row align-items-center g-1">
+            <div class="col-md-6 ">
+                <h1 class="mb-5 display-1"><strong> Te gustaria comprar o rentar un vehiculo?</strong> </h1>
+                <p>
+                    Here you can find the best car to use, our customers are happy and we are looking forward to meeting you.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+
+                <img src="/img/ss.png" class="img-fluid" alt="laptopata" />
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bg-light">
+
+    <div class="container py-4" >
+        <h2 class="pb-4 text-center"> Productos Recientes</h2>
+
+        <div class="row mb-5 g-3">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="rounded border " style=" height:520px;">
+                        <img src="/img/@product.ImageFileName" class="img-fluid" alt="..." style=" height:280px; object-fit:contain" />
+                        <hr />
+                        <h5 class="py-2">@product.Name</h5>
+                        <p>
+                            Brand:@product.Brand, Category: @product.Category
+                        </p>
+                        <h4 class="mb-3">@(product.Price)$</h4>
+
+                        <a class="btn btn-primary btn-sm mb-2" asp-controller="Store" asp-action="Details" asp-route-id="@product.Id" role="button">Details</a>
+                        <button type="button" class="btn btn-warning btn-sm mb-2" onclick="addToCarts(this,@product.Id)">
+                            add to Cart <i class="bi bi-cart4"></i>
+                        </button>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
+<div style="background-color:black">
+
+
+    <div class="container text-white py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 ">
+                <h1 class="mb-5 display-1"><strong> About our Dealer </strong> </h1>
+                <p>
+                    Encuentraras los mejores vehiculos del mercado y con tecnologica de a la banguardia con luestro proveedores lo mas populares
+                    y con los mejores precios.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+
+                <img src="/img/logoPrinc.png" class="img-fluid" alt="laptopata"  style="margin:auto;  max-height:750px"/>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="marcas">
+<div class="container text-white py-5">
+    @* imagenes *@
+ 
+    <div class="wrapper"  >
+        <ul >
+            <li><a href="#"><img src="img/marcas/audi.png" alt="Audi"></a></li>
+            <li><a href="#"><img src="img/marcas/bmw.png" alt="BMW"></a></li>
+            <li><a href="#"><img src="img/marcas/chevrolet.png" alt="Chevrolet"></a></li>
+            <li><a href="#"><img src="img/marcas/dodge.png" alt="Dodge"></a></li>
+            <li><a href="#"><img src="img/marcas/ferrari.png" alt="Ferrari"></a></li>
+            <li><a href="#"><img src="img/marcas/ford.png" alt="Ford"></a></li>
+            <li><a href="#"><img src="img/marcas/forland.png" alt="Forland"></a></li>
+            <li><a href="#"><img src="img/marcas/hino.png" alt="Hino"></a></li>
+            <li><a href="#"><img src="img/marcas/honda.png" alt="Honda"></a></li>
+            <li><a href="#"><img src="img/marcas/hyundai.png" alt="Hyundai"></a></li>
+            <li><a href="#"><img src="img/marcas/infiniti.png" alt="Infiniti"></a></li>
+            <li><a href="#"><img src="img/marcas/isuzu.png" alt="Isuzu"></a></li>
+            <li><a href="#"><img src="img/marcas/jeep.png" alt="Jeep"></a></li>
+            <li><a href="#"><img src="img/marcas/kia.png" alt="Kia"></a></li>
+            <li><a href="#"><img src="img/marcas/landrover.png" alt="Land Rover"></a></li>
+            <li><a href="#"><img src="img/marcas/lexus.png" alt="Lexus"></a></li>
+            <li><a href="#"><img src="img/marcas/mazda.png" alt="Mazda"></a></li>
+            <li><a href="#"><img src="img/marcas/mercedes-benz.png" alt="Mercedes-Benz"></a></li>
+            <li><a href="#"><img src="img/marcas/mini.png" alt="Mini"></a></li>
+            <li><a href="#"><img src="img/marcas/mitsubishi.png" alt="Mitsubishi"></a></li>
+            <li><a href="#"><img src="img/marcas/nissan.png" alt="Nissan"></a></li>
+            <li><a href="#"><img src="img/marcas/piaggio.png" alt="Piaggio"></a></li>
+            <li><a href="#"><img src="img/marcas/porsche.png" alt="Porsche"></a></li>
+            <li><a href="#"><img src="img/marcas/skoda.png" alt="Skoda"></a></li>
+            <li><a href="#"><img src="img/marcas/suzuki.png" alt="Suzuki"></a></li>
+            <li><a href="#"><img src="img/marcas/toyota.png" alt="Toyota"></a></li>
+            <li><a href="#"><img src="img/marcas/volkswagen.png" alt="Volkswagen"></a></li>
+        </div>
+    </div>
+</div>
+
+
+<div id="pie">
+<div class="container">
+    <div class="wrapper">
+        <div class="dealer">
+            <div class="titulo">Dealer</div>
+            <div class="donde">
+                <i class="flaticon-pin"></i>
+                <span>
+                    <strong>Santo Domingo :</strong> Av. Las Americas, esq. Calle Duarte, Andrés, Municipio Boca Chica, Rep. Dom.
+                </span>
+            </div>
+            <div class="donde">
+                <i class="flaticon-whatsapp-1"></i>
+                <span>
+                    <strong>Teléfono</strong> 829-643-1634<br>
+                    <strong>Internacional</strong> 1787-333-1111
+                </span>
+            </div>
+            
+        </div>
+        <div class="dealer">
+            <div class="titulo">MARCAS DISPONIBLES</div>
+            <ul>
+                <li><a href="#">Audi</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Chevrolet</a></li>
+                    <li><a href="#">Dodge</a></li>
+                    <li><a href="#">Ferrari</a></li>
+                    <li><a href="#">Ford</a></li>
+                    <li><a href="#">Forland</a></li>
+                    <li><a href="#">Hino</a></li>
+                    <li><a href="#">Honda</a></li>
+                    <li><a href="#">Hyundai</a></li>
+                    <li><a href="#">Infiniti</a></li>
+                    <li><a href="#">Isuzu</a></li>
+                    <li><a href="#">Jeep</a></li>
+                    <li><a href="#">Kia</a></li>
+                    <li><a href="# rover">Land Rover</a></li>
+                    <li><a href="#">Lexus</a></li>
+                    <li><a href="#">Mazda</a></li>
+                    <li><a href="#-benz">Mercedes-Benz</a></li>
+                    <li><a href="#">Mini</a></li>
+                    <li><a href="#">Mitsubishi</a></li>
+                    <li><a href="#">Nissan</a></li>
+                    <li><a href="#">Piaggio</a></li>
+                    <li><a href="#">Porsche</a></li>
+                    <li><a href="#">Skoda</a></li>
+                    <li><a href="#">Suzuki</a></li>
+                    <li><a href="#">Toyota</a></li>
+                    <li><a href="#">Volkswagen</a></li>
+            </ul>
+        </div>
+        <div class="dealer">
+                <div class="titulo">SIGUENOS</div>
+            <div class="redes">
+                <a href="#" target="_blank" rel="noopener" class="icono">
+                        <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="icono">
+                        <i class="bi bi-facebook"></i>
+                </a>
+                <a href=#" target="_blank" rel="noopener" class="icono">
+                        <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="icono">
+                        <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+            <div class="titulo">HORARIOS</div>
+            <div class="horarios">
+                <span>
+                    <strong>LUN - VIER</strong>  8:30am - 6:00pm
+                </span>
+                <span>
+                        <strong>SABADOS</strong>  8:30am - 2:00pm
+                </span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
